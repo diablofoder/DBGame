@@ -32,22 +32,25 @@ public final class R {
     }
     public static final class id {
         public static final int GameResult=0x7f080003;
-        public static final int hallOfFame=0x7f080004;
-        public static final int playButton=0x7f080005;
+        public static final int but=0x7f080006;
+        public static final int hallOfFame=0x7f080005;
+        public static final int playButton=0x7f080004;
         public static final int playerName=0x7f080002;
         public static final int results=0x7f080000;
+        public static final int sum=0x7f080007;
         public static final int textView1=0x7f080001;
     }
     public static final class layout {
         public static final int activity_ho_f=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int activity_stat=0x7f030002;
+        public static final int activity_statistic=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060003;
         public static final int title_activity_ho_f=0x7f060001;
         public static final int title_activity_stat=0x7f060002;
+        public static final int title_activity_statistic=0x7f060004;
     }
     public static final class style {
         /** 

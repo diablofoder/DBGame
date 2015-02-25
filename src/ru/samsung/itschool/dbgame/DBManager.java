@@ -46,6 +46,24 @@ public class DBManager {
 				+ ");");
 	}
 
+	
+	int sumscore()
+	{
+		String query = "SELECT SUM (SCORE) FROM RESULTS";
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		String score = cursor.getString(0);
+		return Integer.parseInt(score);
+	
+	}
+	
+
+
+	
+	
+	
+	
+	
 	ArrayList<Result> getAllResults() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
@@ -59,10 +77,16 @@ public class DBManager {
 			data.add(new Result(name, score));
 			hasMoreData = cursor.moveToNext();
 		}
-
 		return data;
 	}
 
+	
+	
+
+		
+	
+	
+	
 	private void createTablesIfNeedBe() {
 		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERNAME TEXT, SCORE INTEGER);");
 	}
