@@ -8,4 +8,8 @@ public class Result {
         	this.name = name;
         	this.score = score;
         }
+       public String toString()
+       {
+    	   return this.name + this.score;
+       }
 }

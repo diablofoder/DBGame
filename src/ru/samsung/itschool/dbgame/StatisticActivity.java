@@ -17,9 +17,9 @@ public class StatisticActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_statistic);
 		dbManager = DBManager.getInstance(this);
-		 int b = dbManager.sumscore();
+		 int a = dbManager.sumscore();
 		TextView restv = (TextView)this.findViewById(R.id.sum);
-		restv.setText(b + "");
+		restv.setText(a + "");
 		
 		
 	}

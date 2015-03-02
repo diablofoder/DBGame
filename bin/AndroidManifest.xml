@@ -33,6 +33,18 @@
             android:name=".StatisticActivity"
             android:label="@string/title_activity_statistic" >
         </activity>
+        <activity
+            android:name=".PlayerActivity"
+            android:label="@string/title_activity_player" >
+        </activity>
+        <activity
+            android:name=".NewActivity"
+            android:label="@string/title_activity_new" >
+        </activity>
+        <activity
+            android:name=".GoldActivity"
+            android:label="@string/title_activity_gold" >
+        </activity>
     </application>
 
 </manifest>

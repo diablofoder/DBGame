@@ -65,7 +65,7 @@
         android:textSize="30dp" />
 
     <Button
-        android:id="@+id/but"
+        android:id="@+id/batr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
