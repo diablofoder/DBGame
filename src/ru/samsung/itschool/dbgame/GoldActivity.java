@@ -2,6 +2,7 @@ package ru.samsung.itschool.dbgame;
 
 import java.util.ArrayList;
 
+
 import android.app.Activity;
 import android.database.DataSetObserver;
 import android.os.Bundle;

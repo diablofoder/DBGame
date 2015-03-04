@@ -67,7 +67,7 @@ public class DBManager {
 	ArrayList<Result> getAllResults() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT *  (SCORE) FROM RESULTS;", null);
+		Cursor cursor = db.rawQuery("SELECT (SCORE) FROM RESULTS;", null);
 		boolean hasMoreData = cursor.moveToFirst();
 		
 		while (hasMoreData) {

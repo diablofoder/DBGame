@@ -18,8 +18,10 @@ public class ResulAdapter extends ArrayAdapter<Result> {
 public View  getView (int position, View v, ViewGroup vg)
 {
 	View view = new View(context);
-	LayoutInflator infl = (LayoutInflator) Context.getSystemService (Context.LAYOUT_INFLATER_SERVICE), conn, flags)
-	View view = infl.inflance(R.layout.activity_gold, vg);
+	LayoutInflater infl = (LayoutInflater)context.getSystemService
+		      (Context.LAYOUT_INFLATER_SERVICE);
+	if (v == null) v =infl.inflance(R.layout.activity_gold, vg);
+
 	return view;
 }
 }
