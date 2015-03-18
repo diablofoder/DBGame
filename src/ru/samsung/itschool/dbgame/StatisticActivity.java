@@ -1,6 +1,6 @@
 package ru.samsung.itschool.dbgame;
 
-import android.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,11 +18,14 @@ public class StatisticActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_statistic);
 		dbManager = DBManager.getInstance(this);
-		 int a = dbManager.sumscore();
+		 int a = dbManager.sumscore(); 
 		TextView restv = (TextView)this.findViewById(R.id.sum);
-		restv.setText(a + "");
-		
-		
+		restv.setText("Сумма очков - " + a);
+		 int b = dbManager.count(); 
+			TextView res = (TextView)this.findViewById(R.id.count);
+			res.setText("Колличество сыграных игр - " + b);
+			 int c = dbManager.max(); 
+				TextView re = (TextView)this.findViewById(R.id.max);
+				re.setText("Mаксимальный счёт - " + c);
 	}
-	
 }

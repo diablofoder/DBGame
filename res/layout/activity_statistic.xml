@@ -4,13 +4,32 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-     <TextView 
-        android:id="@+id/sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="36dp"
-        />
+    
      
-     
+
+      <TextView
+          android:id="@+id/sum"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:textSize="36dp"
+          />
+
+      <TextView
+          android:id="@+id/count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/sum" 
+          android:textSize="36dp"/>
+
+      <TextView
+          android:id="@+id/max"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/count"
+          android:textSize="36dp" />
 
 </RelativeLayout>

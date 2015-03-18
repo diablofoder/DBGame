@@ -49,14 +49,31 @@ public class DBManager {
 	
 	int sumscore()
 	{
-		String query = "SELECT SUM (SCORE) FROM RESULTS";
+		String query = "SELECT SUM (SCORE) FROM RESULTS;";
 		Cursor cursor = db.rawQuery(query, null);
 		cursor.moveToFirst();
 		String score = cursor.getString(0);
 		return Integer.parseInt(score);
 	
 	}
+	int count()
+	{
+		String query = "SELECT COUNT(*) FROM RESULTS;";
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		String score = cursor.getString(0);
+		return Integer.parseInt(score);
 	
+	}
+	int max()
+	{
+		String query = "SELECT MAX(SCORE) FROM RESULTS;";
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		String score = cursor.getString(0);
+		return Integer.parseInt(score);
+	
+	}
 
 
 	
@@ -67,7 +84,7 @@ public class DBManager {
 	ArrayList<Result> getAllResults() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT (SCORE) FROM RESULTS;", null);
+		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS;", null);
 		boolean hasMoreData = cursor.moveToFirst();
 		
 		while (hasMoreData) {
@@ -79,6 +96,24 @@ public class DBManager {
 		}
 		return data;
 	}
+
+	
+	ArrayList<Result> get() {
+
+		ArrayList<Result> data = new ArrayList<Result>();
+		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS;", null);
+		boolean hasMoreData = cursor.moveToFirst();
+		
+		while (hasMoreData) {
+			String name = cursor.getString(cursor.getColumnIndex("USERNAME"));
+			int score = Integer.parseInt(cursor.getString(cursor
+					.getColumnIndex("SCORE")));
+			data.add(new Result(name, score));
+			hasMoreData = cursor.moveToNext();
+		}
+		return data;
+	}
+
 
 	
 	

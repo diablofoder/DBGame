@@ -20,7 +20,7 @@ public View  getView (int position, View v, ViewGroup vg)
 	View view = new View(context);
 	LayoutInflater infl = (LayoutInflater)context.getSystemService
 		      (Context.LAYOUT_INFLATER_SERVICE);
-	if (v == null) v =infl.inflance(R.layout.activity_gold, vg);
+	if (v == null) v =infl.inflate(R.layout.activity_gold, vg);
 
 	return view;
 }
