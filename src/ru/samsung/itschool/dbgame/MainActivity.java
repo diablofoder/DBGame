@@ -68,7 +68,7 @@ else
 	}
 
 	public void showHoF(View v) {
-		startActivity(new Intent(this, GoldActivity.class));
+		startActivity(new Intent(this, ExtResults.class));
 	}
 	public void showStat(View v) {
 		startActivity(new Intent(this, StatisticActivity.class));

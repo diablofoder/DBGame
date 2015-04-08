@@ -45,6 +45,16 @@
             android:name=".GoldActivity"
             android:label="@string/title_activity_gold" >
         </activity>
+         <activity
+            android:name=".ExtResults"
+            android:label="@string/title_activity_ext_results" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>

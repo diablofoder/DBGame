@@ -9,5 +9,11 @@
     <string name="title_activity_player">PlayerActivity</string>
     <string name="title_activity_new">NewActivity</string>
     <string name="title_activity_gold">GoldActivity</string>
+    
+    <string name="title_activity_ext_results">ExtResults</string>
+
+    
+    
+    
 
 </resources>

@@ -38,6 +38,20 @@
           android:layout_alignParentLeft="true"
           android:layout_below="@+id/max"
           android:textSize="36dp" />
+        <TextView
+          android:id="@+id/che"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/countplayers"
+          android:textSize="36dp" />
+        <TextView
+          android:id="@+id/cheg"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/che"
+          android:textSize="36dp" />
       
 
 </RelativeLayout>

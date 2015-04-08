@@ -26,7 +26,7 @@ public class GoldActivity extends Activity {
 		lv.setAdapter(adapter);
 			
 		
-			
+
 	}
 	}
 	

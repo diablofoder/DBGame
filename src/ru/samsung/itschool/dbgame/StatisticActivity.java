@@ -21,14 +21,21 @@ public class StatisticActivity extends Activity {
 		 int a = dbManager.sumscore(); 
 		TextView restv = (TextView)this.findViewById(R.id.sum);
 		restv.setText("Сумма очков - " + a);
-		 int b = dbManager.count(); 
+		 double b = dbManager.count(); 
+		 int i = (int)b;
 			TextView res = (TextView)this.findViewById(R.id.count);
-			res.setText("Колличество сыграных игр - " + b);
+			res.setText("Колличество сыграных игр - " + i);
 			 int c = dbManager.max(); 
 				TextView re = (TextView)this.findViewById(R.id.max);
 				re.setText("Mаксимальный счёт - " + c);
 				 int d = dbManager.players(); 
 					TextView r = (TextView)this.findViewById(R.id.countplayers);
 					r.setText("Всего игроков - " + d);
+					 double e = dbManager.ch(); 
+						TextView rot = (TextView)this.findViewById(R.id.che);
+						rot.setText("Процент чётных чисел - " + e +"%");
+						 double io =100 - dbManager.ch(); 
+							TextView WOLF = (TextView)this.findViewById(R.id.cheg);
+							WOLF.setText("Процент нечётных чисел - " + io +"%");
 	}
 }

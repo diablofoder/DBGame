@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 
 
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -56,7 +57,7 @@ public class DBManager {
 		return Integer.parseInt(score);
 	
 	}
-	int count()
+	double count()
 	{
 		String query = "SELECT COUNT(*) FROM RESULTS;";
 		Cursor cursor = db.rawQuery(query, null);
@@ -83,20 +84,16 @@ public class DBManager {
 		return Integer.parseInt(score);
 	
 	}
-	int ch()
+	double ch()
 	{
-		String query = "SELECT SCORE FROM RESULTS;";
+		String query = "SELECT count(SCORE) FROM RESULTS where SCORE%2=0;";
 		Cursor cursor = db.rawQuery(query, null);
 		cursor.moveToFirst();
 		String score = cursor.getString(0);
-		return Integer.parseInt(score);
-	
+		return Integer.parseInt(score)/dbManager.count() *100;
 	}
 
 
-	
-	
-	
 	
 	
 	ArrayList<Result> getAllResults() {
@@ -135,18 +132,48 @@ public class DBManager {
 
 	
 	
+	int getPlayerIDByName(String username) {
+		Cursor cursor = db.rawQuery("SELECT USERID FROM USERS WHERE NAME='"
+				+ username + "'", null);
+		if (!cursor.moveToFirst()) {
+			return -1;
+		}
+		return cursor.getInt(cursor.getColumnIndex("USERID"));
+	}
 
-		
+	void userUpdate(int userid, String username, String pic)
+	{
+		//напишите запрос правильно
+		db.execSQL("UPDATE USERS SET NAME = 'NameStub' WHERE USERID = -1;");
+	}
 	
+	String getUserName(int userid) {
+		Cursor cursor = db.rawQuery("SELECT NAME FROM USERS WHERE USERID='"
+				+ userid + "'", null);
+		if (cursor.moveToFirst()) return cursor.getString(0);
+		return "";
+	}
 	
-	
+	String getUserPic(int userid) {
+		Cursor cursor = db.rawQuery("SELECT PIC FROM USERS WHERE USERID='"
+				+ userid + "'", null);
+		cursor.moveToFirst();
+		//Если нет фото - возвращаем пустую строку
+		if (!cursor.moveToFirst() || cursor.isNull(0)) return "";  
+		else return cursor.getString(0);
+	}
+
 	private void createTablesIfNeedBe() {
-		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERNAME TEXT, SCORE INTEGER);");
+		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERID INTEGER, SCORE INTEGER);");
+		db.execSQL("CREATE TABLE IF NOT EXISTS USERS(USERID INTEGER PRIMARY KEY ASC, NAME TEXT, PIC TEXT);");
 	}
 
 	private boolean dbExist() {
 		File dbFile = context.getDatabasePath(DB_NAME);
 		return dbFile.exists();
 	}
+	
+	
+
 
 }
