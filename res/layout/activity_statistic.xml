@@ -31,5 +31,13 @@
           android:layout_alignParentLeft="true"
           android:layout_below="@+id/count"
           android:textSize="36dp" />
+       <TextView
+          android:id="@+id/countplayers"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_below="@+id/max"
+          android:textSize="36dp" />
+      
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package ru.samsung.itschool.dbgame;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -52,8 +53,16 @@ public class MainActivity extends Activity {
 						            Integer.parseInt(MainActivity.this.gameResult.getText().toString()));
 			}
 		});
-
-		gameResult.setText(((int) (Math.random() * 1001))+"");
+int k = (int) (Math.random() * 1001);
+if( k % 2 == 1){
+	gameResult.setTextColor(Color.parseColor("#00FF00"));
+}
+else
+{
+	gameResult.setTextColor(Color.parseColor("#FF0000"));
+}
+		gameResult.setText((k)+"");
+		
 		gameResult.startAnimation(play);
 
 	}

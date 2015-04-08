@@ -74,6 +74,24 @@ public class DBManager {
 		return Integer.parseInt(score);
 	
 	}
+	int players()
+	{
+		String query = "SELECT count(distinct USERNAME) FROM RESULTS;";
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		String score = cursor.getString(0);
+		return Integer.parseInt(score);
+	
+	}
+	int ch()
+	{
+		String query = "SELECT SCORE FROM RESULTS;";
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		String score = cursor.getString(0);
+		return Integer.parseInt(score);
+	
+	}
 
 
 	
@@ -101,7 +119,7 @@ public class DBManager {
 	ArrayList<Result> get() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS;", null);
+		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS ;", null);
 		boolean hasMoreData = cursor.moveToFirst();
 		
 		while (hasMoreData) {

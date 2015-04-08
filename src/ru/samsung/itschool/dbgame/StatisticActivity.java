@@ -27,5 +27,8 @@ public class StatisticActivity extends Activity {
 			 int c = dbManager.max(); 
 				TextView re = (TextView)this.findViewById(R.id.max);
 				re.setText("Mаксимальный счёт - " + c);
+				 int d = dbManager.players(); 
+					TextView r = (TextView)this.findViewById(R.id.countplayers);
+					r.setText("Всего игроков - " + d);
 	}
 }
