@@ -99,7 +99,7 @@ public class DBManager {
 	ArrayList<Result> getAllResults() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS;", null);
+		Cursor cursor = db.rawQuery("SELECT SCORE, USERNAME FROM RESULTS;", null);
 		boolean hasMoreData = cursor.moveToFirst();
 		
 		while (hasMoreData) {
@@ -116,7 +116,7 @@ public class DBManager {
 	ArrayList<Result> get() {
 
 		ArrayList<Result> data = new ArrayList<Result>();
-		Cursor cursor = db.rawQuery("SELECT (SCORE), (USERNAME) FROM RESULTS ;", null);
+		Cursor cursor = db.rawQuery("SELECT SCORE, USERNAME FROM RESULTS;", null);
 		boolean hasMoreData = cursor.moveToFirst();
 		
 		while (hasMoreData) {
@@ -164,7 +164,7 @@ public class DBManager {
 	}
 
 	private void createTablesIfNeedBe() {
-		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERID INTEGER, SCORE INTEGER);");
+		db.execSQL("CREATE TABLE IF NOT EXISTS RESULTS (USERNAME TEXT, SCORE INTEGER);");
 		db.execSQL("CREATE TABLE IF NOT EXISTS USERS(USERID INTEGER PRIMARY KEY ASC, NAME TEXT, PIC TEXT);");
 	}
 
